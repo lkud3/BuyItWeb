@@ -1,6 +1,22 @@
 # BuyItWeb
+The repository of my final project on CS306 at American College at Thessaloniki. It is a rebuild of my BuyIt project adapted for the web version using the Angular framework.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.7.
+This version allows the user to login to their personal account or to create a new one. After the registration is done, user can dive into variety of available items in stock, have a closer look at the price and description of each item, and add them into cart. Each item has a counter of views as well as accumulated rating and comments of other users. 
+
+THe current version is not final, having some minor bugs in cart system, as well as awaits implementation of leaving comments and ratings by the users and adding the wishlist.
+
+Project was built on Angular with implementation of free to use css layout and Bootstrap. 
+
+In order to start project locally, execute 
+
+```bash
+npm install
+```
+
+and follow the guidelines below.
+
+
+# This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.7.
 
 ## Development server
 

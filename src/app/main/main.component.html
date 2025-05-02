@@ -1,0 +1,46 @@
+<div class="d-flex flex-column min-vh-100">
+<!-- Navbar-->
+<nav class="navbar navbar-expand-lg navbar-default fixed-top">
+    <div class="container px-4 px-lg-5">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation" aria-controls="navbarNav">
+            <span class="navbar-toggler-bar"></span>
+            <span class="navbar-toggler-bar"></span>
+            <span class="navbar-toggler-bar"></span>
+        </button>
+        <a class="navbar-brand">Menu</a>
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                <li class="nav-item">
+                    <a class="nav-link" (click)="switchTab('index')" style="cursor: pointer;">Home</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" (click)="switchTab('personal')" style="cursor: pointer;">
+                        <i aria-hidden="true" class="nc-icon nc-single-02"></i>
+                    </a>
+                </li>
+            </ul>
+            <form class="d-flex">
+                <button class="btn btn-dark" type="button" (click)="switchTab('cart')">
+                    <i class="bi-cart-fill me-1"></i>
+                    Cart
+                    <span class="badge bg-light text-black ms-1 rounded-pill">{{userCart.length}}</span>
+                </button>
+            </form>
+        </div>
+    </div>
+</nav>
+<main class="flex-fill">
+<app-index *ngIf="currentTab === 'index'"></app-index>
+<app-cart *ngIf="currentTab === 'cart'"></app-cart>
+<app-personal *ngIf="currentTab === 'personal'"></app-personal>
+</main>
+
+  <!-- Footer-->
+  <footer class="py-5 bg-dark">
+    <div class="container"><p class="m-0 text-center text-white">Copyright &copy; BuyIt 2025</p></div>
+  </footer>
+</div>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

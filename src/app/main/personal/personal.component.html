@@ -1,0 +1,70 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h4>User Profile</h4>
+                </div>
+                <div class="card-body">
+                    <div *ngIf="successMessage" class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ successMessage }}
+                        <button type="button" class="close" (click)="successMessage = ''" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="mb-3">
+                        <img src="{{currentUser?.thumbnail}}" alt="User  Photo" class="rounded-circle" width="150" height="150">
+                    </div>
+                    <form #loginForm="ngForm" (submit)="onSubmit()">
+                        <div class="mb-3 form-group">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" [(ngModel)]="username" required>
+                        </div>
+                        <div class="mb-3 form-group">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="text" class="form-control" id="password" name="password" placeholder="Enter your password" [(ngModel)]="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" [disabled] = "loginForm.invalid">Update Profile</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-8">
+            <div class="card">
+                <div *ngIf="wishlist && wishlist.length > 0">
+                <div class="card-header">
+                    <h5>Featured Items</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Item Name</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Price</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of wishlist">
+                                <td>{{ item.name }}</td>
+                                <td>{{ item.description }}</td>
+                                <td>${{ item.price }}</td>
+                                <td>
+                                    <button class="btn btn-danger btn-sm" (click)="removeFromWishlist(item.id)">X</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+                <div *ngIf="!wishlist || wishlist.length === 0">
+                    <p>Nothing in wishlist.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

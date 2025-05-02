@@ -1,0 +1,9 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h1 class="text-center" style="font-weight: bold;">BuyIt</h1>
+            <app-login *ngIf="showLogin" (toggle)="toggleView()" (loginsuccessful)="loginSuccessfull()"></app-login>
+            <app-reg *ngIf="!showLogin" (toggle)="toggleView()" (loginsuccessful)="loginSuccessfull()"></app-reg>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+a {
+    color: #007bff; /* Bootstrap primary color */
+    font-weight: bold; /* Make the text bold */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  a:hover {
+    color: #0056b3; /* Darker shade for hover effect */
+    cursor: pointer; /* Change cursor to pointer */
+  }

@@ -1,0 +1,43 @@
+<div class="container custom-margin-top mb-3">
+    <h2 class="text-center">Shopping Cart</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div *ngIf="userCart.length === 0" class="alert alert-info text-center">
+                Your cart is empty.
+            </div>
+            <div *ngIf="userCart.length > 0" >
+                <div class="card" *ngFor="let item of userCart">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="{{ item.images[0] }}" class="card-img" alt="{{ item.name }}" style="object-fit: cover; height: 100%; width: 100%;">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-header">
+                                <h5>{{ item.name }}</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">{{ item.description }}</p>
+                                <p class="card-text">Price: ${{ item.price }}</p>
+                                <button class="btn btn-danger" (click)="removeFromCart(item)">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <h4>
+                        Total Price: 
+                        <span *ngIf="totalPrice < originalTotalPrice" style="text-decoration: line-through;">
+                            ${{ originalTotalPrice.toFixed(2) }}
+                        </span>
+                        <span *ngIf="totalPrice < originalTotalPrice">
+                            <strong> ${{ totalPrice.toFixed(2) }}</strong>
+                        </span>
+                        <span *ngIf="totalPrice >= originalTotalPrice">
+                            ${{ totalPrice.toFixed(2) }}
+                        </span>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+.carousel {
+    max-width: 800px; /* Set your desired max width */
+    margin: 0 auto; /* Center the carousel */
+}
+
+.carousel-item img {
+    width: 100%; /* Make the image take the full width of the carousel item */
+    height: 400px; /* Set a fixed height for the carousel items */
+    object-fit: cover; /* Use cover to maintain aspect ratio and fill the container */
+}
+
+.custom-margin-top {
+    margin-top: 80px; /* Adjust this value as needed */
+}
+
+
+
+.star-rating {
+    font-size: 2rem; /* Adjust size as needed */
+    color: #ccc; /* Default color for empty stars */
+    cursor: pointer;
+}
+
+.star-rating .filled {
+    color: gold; /* Color for filled stars */
+}
+
+.star-rating .empty {
+    color: #ccc; /* Color for empty stars */
+}
